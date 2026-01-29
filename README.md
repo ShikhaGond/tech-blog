@@ -323,7 +323,3 @@ https://api.slingacademy.com/v1/sample-data/blog-posts?offset=0&limit=10
 
 Built by **Shikha Gond**
 
-
-
-Just say:
-**CHECKLIST** or **LIGHTHOUSE** or **DEPLOYMENT**
