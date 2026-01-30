@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"), // change to Vercel URL later
+metadataBase: new URL("https://tech-blog-rbjulneu9-shikhagond18-gmailcoms-projects.vercel.app"),
+
   title: "Tech Blog | Latest Tech Articles",
   description:
     "A fast, SEO-optimized tech blog built with Next.js, TypeScript, and Tailwind CSS.",
