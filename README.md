@@ -1,4 +1,4 @@
-* `YOUR_VERCEL_URL`
+* `https://tech-blog-lilac-eight.vercel.app/`
 
 
 ---
@@ -13,7 +13,7 @@ The application fetches blog data from a public API and supports searching, cate
 ## 🚀 Live Demo
 
 **Deployed on Vercel:**
-👉 [https://YOUR_VERCEL_URL.vercel.app](https://YOUR_VERCEL_URL.vercel.app)
+👉 [https://tech-blog-lilac-eight.vercel.app/]
 
 ---
 
