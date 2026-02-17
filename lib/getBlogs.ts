@@ -1,21 +1,29 @@
-import { ApiResponse } from "@/types/blog";
+import { ApiResponse, BlogPost } from "@/types/blog";
 
-export async function getBlogs() {
-  const res = await fetch(
-    "https://api.slingacademy.com/v1/sample-data/blog-posts?offset=0&limit=10",
-    {
-      cache: "no-store",
-      headers: {
-        Accept: "application/json",
-        "User-Agent": "Mozilla/5.0",
-      },
+export async function getBlogs(): Promise<BlogPost[]> {
+  try {
+    const res = await fetch(
+      "https://api.slingacademy.com/v1/sample-data/blog-posts?offset=0&limit=10",
+      {
+        next: { revalidate: 3600 }, // cache for 1 hour
+      }
+    );
+
+    if (!res.ok) {
+      console.error("API returned error:", res.status);
+      return []; // Don't crash app
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch blogs");
+    const data: ApiResponse = await res.json();
+
+    if (!data?.blogs) {
+      console.error("Invalid API response");
+      return [];
+    }
+
+    return data.blogs;
+  } catch (error) {
+    console.error("Fetch failed:", error);
+    return []; // Graceful fallback
   }
-
-  const data: ApiResponse = await res.json();
-  return data.blogs;
 }
