@@ -1,15 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "api.slingacademy.com",
-        pathname: "/public/sample-blog-posts/**",
-      },
-    ],
-  },
+images: {
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "picsum.photos",
+    },
+  ],
+},
+
 };
 
 export default nextConfig;

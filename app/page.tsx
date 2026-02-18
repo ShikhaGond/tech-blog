@@ -1,12 +1,9 @@
 import BlogClient from "@/components/BlogClient";
-import { getBlogs } from "@/lib/getBlogs";
+import { blogs } from "@/data/blogs";
 
-export default async function HomePage() {
-  const blogs = await getBlogs(); // safe version (must not throw)
-
+export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* WebSite Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -14,13 +11,12 @@ export default async function HomePage() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Tech Blog",
-            url: "https://tech-blog-lilac-eight.vercel.app", // replace with your real URL
+            url: "https://tech-blog-lilac-eight.vercel.app",
             description:
               "A fast, SEO-optimized tech blog built with Next.js, TypeScript, and Tailwind CSS.",
           }),
         }}
       />
-
       <BlogClient blogs={blogs} />
     </main>
   );
